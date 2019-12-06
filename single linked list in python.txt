@@ -1,0 +1,140 @@
+class node():
+    def __init__(s,d):
+        s.d=d
+        s.nex=None
+class Sll():
+    def __init__(s):
+        s.head=None
+    def makenode(s):
+            n=int(input("enter num"))
+            nn=node(n)
+            if(s.head is None):
+                s.head=nn
+            else:
+                print("list is created")
+    def insertend(s):
+        #print("here")
+        d=int(input("enter num"))
+        nn=node(d)
+        if(s.head is None):
+            s.head=nn
+        else:
+            sn=s.head
+            p=sn
+            while(p.nex!=None):
+                p=p.nex
+            p.nex=nn
+    def prints(s):
+        sn=s.head
+        while(sn!=None):
+            print(sn.d)
+            sn=sn.nex
+    def insertstart(s):
+        n=int(input("enter num"))
+        nn=node(n)
+        if(s.head is None):
+            s.head=nn
+        else:
+            nn.nex=s.head
+            s.head=nn
+    def insertreq(s):
+        n=int(input("enter num"))
+        nn=node(n)
+        r=int(input("enter num after to place"))
+        sn=s.head
+        p=sn
+        while(p!=None):
+            if(p.d!=r):
+                p=p.nex
+            else:
+                break
+        nn.nex=p.nex
+        p.nex=nn
+    def insertindex(s):
+        nn=node(int(input("enter num")))
+        r=int(input("enter num req index"))
+        sn=s.head
+        p=sn
+        c=0
+        while(p!=None):
+            if(c!=r):
+                p=p.nex
+                c+=1
+            else:
+                break
+        if(p!=None):
+            nn.nex=p.nex
+            p.nex=nn
+        if(p is None):
+            print("enter max index use count")
+    def deletlast(s):
+        sn=s.head
+        while(sn.nex.nex!=None):
+            sn=sn.nex
+        sn.nex=None
+    def deletefirst(s):
+        if(s.head is None):
+            print("empty under flow")
+        else:
+            s.head=s.head.nex
+    def cou(s):
+        c=0
+        sn=s.head
+        while(sn!=None):
+            c+=1
+            sn=sn.nex
+        print('number of nodes is '+str(c))
+    def search(s):
+        r=int(input("enter num to search"))
+        sn=s.head
+        c=0
+        if(sn is None):
+            print("nothing there in list enter values")
+        else:
+            while(sn!=None):
+                if(sn.d!=r):
+                    sn=sn.nex
+                    c+=1
+                else:
+                    print("found in list")
+                    break
+            if(sn is None):
+                print("not in list") 
+    def deletereqnu(s):
+        r=int(input("enter num to search"))
+        sn=s.head
+        if(sn is None):
+            print("nothing is here to delete")
+        else:
+            while(sn!=None):
+                if(sn.nex.d!=r):
+                    sn=sn.nex
+                else:
+                    sn.nex=sn.nex.nex
+                    break
+            if(sn is None):
+                print("entered number is not here")
+
+a=Sll()
+i=1
+while(i):
+    c=int(input('''1.create\n2.insert\n3.print\n4.exit\n5.insert start\n6.insert req
+7.insertindex\n8.delete last\n9.delete first\n10.count\n11.search\n12.delete req nu'''))
+    if(c==1):
+        a.makenode()
+    if(c==2):
+        a.insertend()
+    if(c==3):
+        a.prints()
+    if(c==5): a.insertstart()
+    if(c==6): a.insertreq()
+    if(c==7): a.insertindex()
+    if(c==8): a.deletlast()
+    if(c==9): a.deletefirst()
+    if(c==10): a.cou()
+    if(c==11): a.search()
+    if(c==12): a.deletereqnu()
+    if(c==4):i=0
+  
+
+
