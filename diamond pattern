@@ -1,0 +1,9 @@
+n=int(input())
+e,m=1,n//2
+for i in range(n,0,-1):
+    if(m<i):
+        print(" "*i+'* '*e)
+        e+=1
+    else:
+        print(" "*e+'* '*i)
+        e+=1
