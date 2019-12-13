@@ -1,0 +1,38 @@
+class bst:
+    def __init__(s,d):
+        s.d=d
+        s.l=None
+        s.r=None
+        
+    def insert(s,d):
+        if s.d:
+            if(d<s.d):
+                if(s.l is None):
+                    s.l=bst(d)
+                else:
+                    s.l.insert(d)
+            else:
+                if(s.r is None):
+                    s.r=bst(d)
+                else:
+                    s.r.insert(d)
+        else:
+            s.d=d
+    def pri(s):
+        if(s.l):
+            s.l.pri()
+        print(s.d)
+        if(s.r):
+            s.r.pri()
+        
+b=bst(9)
+b.insert(8)
+b.insert(11)
+b.insert(2)
+b.insert(22)
+b.insert(7)
+b.insert(4)
+b.pri()        
+        
+        
+        
