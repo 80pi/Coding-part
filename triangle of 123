@@ -1,0 +1,14 @@
+n=int(input())
+sp,t=n,1
+for i in range(1,n+1):
+    t1=2
+    print(" "*sp,end="")
+    for j in range(0,i):
+        print(format(str(t)),end="")
+        t-=1
+    for j in range(1,i):
+        print(format(str(t1)),end="")
+        t1+=1
+    t=t+1+i
+    sp-=1
+    print()
