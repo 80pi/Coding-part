@@ -1,0 +1,31 @@
+s="{([]){"
+t=[]
+j=0
+for i in range(len(s)):
+    if(s[0]==']' or s[0]=='}' or s[0]==')'):
+        print('1')
+        j+=1
+        break
+    else:
+        if(s[i]=='(' or s[i]=='[' or s[i]=='{'):
+            t.append(s[i])
+        if(s[i]==']' or s[i]=='}' or s[i]==')'):
+            t2=t[len(t)-1]
+            t1=t.pop()
+            if(s[i]=='}' and t2=="{"):
+                j=0
+            elif(s[i]==')' and t2=="("):
+                j=0
+            elif(s[i]==']' and t2=="["):
+                j=0
+            else:
+                j+=1
+                print('not bala'+str(i+1))
+                break
+if(len(t)!=0 and j==0):
+    print(i+2)
+    j+=1
+if(j==0):
+    print('0')
+        
+        
